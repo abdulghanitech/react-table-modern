@@ -16,35 +16,35 @@ const data = [
     address: { city: 'Bng', street: '1et', country: 'USA' },
     phone: '9191975571',
     email: 'hi@abdulghani.tech',
-    website: 'abdulghani.me'
+    website: 'abdulghani.tech'
   },
   {
     name: 'Abdul Ghani 3',
     address: { city: 'Bng', street: '1et', country: 'USA' },
     phone: '9191975571',
     email: 'hi@abdulghani.tech',
-    website: 'abdulghani.me'
+    website: 'abdulghani.tech'
   },
   {
     name: 'Abdul Ghani 4',
     address: { city: 'Bng', street: '1et', country: 'USA' },
     phone: '9191975571',
     email: 'hi@abdulghani.tech',
-    website: 'abdulghani.me'
+    website: 'abdulghani.tech'
   },
   {
     name: 'Abdul Ghani 5',
     address: { city: 'Bng', street: '1et', country: 'USA' },
     phone: '9191975571',
     email: 'hi@abdulghani.tech',
-    website: 'abdulghani.me'
+    website: 'abdulghani.tech'
   },
   {
     name: 'Abdul Ghani 6',
     address: { city: 'Bng', street: '1et', country: 'USA' },
     phone: '9191975571',
     email: 'hi@abdulghani.tech',
-    website: 'abdulghani.me'
+    website: 'abdulghani.tech'
   }
 ]
 
@@ -52,12 +52,10 @@ const columns = [
   {
     dataField: 'name',
     text: 'Name',
-    sort: true
   },
   {
     dataField: 'address.country',
     text: 'Address',
-    sort: true
   },
   {
     dataField: 'phone',

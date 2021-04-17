@@ -18,6 +18,74 @@ import React, { Component } from 'react'
 import ReactTableModern from 'react-table-modern'
 import 'react-table-modern/dist/index.css'
 
+const data = [
+  {
+    name: 'Abdul Ghani',
+    address: { city: 'Hyd', street: 'stret', country: 'India' },
+    phone: '9191919191',
+    email: 'hello@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 2',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 3',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 4',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 5',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 6',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.tech'
+  }
+]
+
+const columns = [
+  {
+    dataField: 'name',
+    text: 'Name',
+  },
+  {
+    dataField: 'address.country',
+    text: 'Address',
+  },
+  {
+    dataField: 'phone',
+    text: 'Phone'
+  },
+  {
+    dataField: 'email',
+    text: 'Email'
+  },
+  {
+    dataField: 'website',
+    text: 'Website'
+  }
+]
+
 class Example extends Component {
   render() {
     return (
