@@ -1,6 +1,6 @@
 # react-table-modern
 
-> A Modern Table Made using React
+> A Modern Table Made using React 🔥
 
 [![NPM](https://img.shields.io/npm/v/react-table-modern.svg)](https://www.npmjs.com/package/react-table-modern) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -29,6 +29,18 @@ class Example extends Component {
   }
 }
 ```
+
+---
+
+Props
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| data | Array Of Objects | [] |
+| columns | Array Of Objects | [] |
+| paginationRequired| boolean | true |
+| paginationItemsPerPage | number | 5 |
+
 
 ## License
 
