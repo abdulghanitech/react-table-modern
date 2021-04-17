@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import ReactTableModern from '.'
 
-describe('ExampleComponent', () => {
+describe('ReactTableModern', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(ReactTableModern).toBeTruthy()
   })
 })

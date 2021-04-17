@@ -1,10 +1,99 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-table-modern'
+import ReactTableModern from 'react-table-modern'
 import 'react-table-modern/dist/index.css'
 
+const data = [
+  {
+    name: 'Abdul Ghani',
+    address: { city: 'Hyd', street: 'stret', country: 'India' },
+    phone: '9191919191',
+    email: 'hello@abdulghani.tech',
+    website: 'abdulghani.tech'
+  },
+  {
+    name: 'Abdul Ghani 2',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.me'
+  },
+  {
+    name: 'Abdul Ghani 3',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.me'
+  },
+  {
+    name: 'Abdul Ghani 4',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.me'
+  },
+  {
+    name: 'Abdul Ghani 5',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.me'
+  },
+  {
+    name: 'Abdul Ghani 6',
+    address: { city: 'Bng', street: '1et', country: 'USA' },
+    phone: '9191975571',
+    email: 'hi@abdulghani.tech',
+    website: 'abdulghani.me'
+  }
+]
+
+const columns = [
+  {
+    dataField: 'name',
+    text: 'Name',
+    sort: true
+  },
+  {
+    dataField: 'address.country',
+    text: 'Address',
+    sort: true
+  },
+  {
+    dataField: 'phone',
+    text: 'Phone'
+  },
+  {
+    dataField: 'email',
+    text: 'Email'
+  },
+  {
+    dataField: 'website',
+    text: 'Website'
+  }
+]
+
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}
+    >
+      <h1>Say Hello to Modern React Table 🔥</h1>
+
+      <ReactTableModern
+        data={data}
+        columns={columns}
+        paginationItemsPerPage={3}
+        // paginationRequired={false}
+      />
+    </div>
+  )
+  
 }
 
 export default App

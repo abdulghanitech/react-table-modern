@@ -15,12 +15,17 @@ npm install --save react-table-modern
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-table-modern'
+import ReactTableModern from 'react-table-modern'
 import 'react-table-modern/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return (
+      <ReactTableModern
+        data={data}
+        columns={columns}     
+      />
+    )
   }
 }
 ```
