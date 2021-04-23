@@ -1,7 +1,6 @@
 import React from 'react'
-
 import ReactTableModern from 'react-table-modern'
-import 'react-table-modern/dist/index.css'
+
 
 const data = [
   {
@@ -87,6 +86,8 @@ const App = () => {
         data={data}
         columns={columns}
         paginationItemsPerPage={3}
+        // tableWrapperStyle={{backgroundColor: "#FFF"}}
+        // tableCellsStyle={{padding: 20}}
         // paginationRequired={false}
       />
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CSS from 'csstype'
+// import CSS from 'csstype'
 import getCell from './utils'
 
 interface Props {
@@ -7,14 +7,21 @@ interface Props {
   columns: any[]
   paginationRequired?: boolean
   paginationItemsPerPage?: number
+  tableWrapperStyle?: React.CSSProperties
+  tableStyle?: React.CSSProperties
+  tableHeaderStyle?: React.CSSProperties
+  tableHeaderCellsStyle?: React.CSSProperties
+  tableCellsStyle?: React.CSSProperties
 }
 
-const ReactTableModern = ({
-  data,
-  columns,
-  paginationRequired = true,
-  paginationItemsPerPage = 5
-}: Props) => {
+const ReactTableModern = (props: Props) => {
+  const {
+    data,
+    columns,
+    paginationRequired = true,
+    paginationItemsPerPage = 5
+  } = props
+
   const [startIndex, setStartIndex] = useState(0)
   const [endIndex, setEndIndex] = useState(5)
 
@@ -47,15 +54,15 @@ const ReactTableModern = ({
     ? data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
     : data
 
-  const PaginationWrapperStyle: CSS.Properties = {
+  const PaginationWrapperStyle: React.CSSProperties = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: '1rem',
-    marginTop: '4px'
+    marginTop: "4px"
   }
 
-  const selectWrapperStyle: CSS.Properties = {
+  const selectWrapperStyle: React.CSSProperties = {
     backgroundColor: 'white',
     borderRadius: '9999px',
     paddingLeft: '1rem',
@@ -69,13 +76,13 @@ const ReactTableModern = ({
     outlineOffset: '2px'
   }
 
-  const selectStyle: CSS.Properties = {
+  const selectStyle: React.CSSProperties = {
     appearance: 'none',
     outline: '2px solid transparent',
     outlineOffset: '2px'
   }
 
-  const nextAndPrevBtnStyle: CSS.Properties = {
+  const nextAndPrevBtnStyle: React.CSSProperties = {
     backgroundColor: '#F0F0F1',
     borderRadius: '9999px',
     padding: '0.5rem 1rem',
@@ -83,7 +90,7 @@ const ReactTableModern = ({
     color: 'black'
   }
 
-  const paginationBtns: CSS.Properties = {
+  const paginationBtns: React.CSSProperties = {
     borderRadius: '9999px',
     color: 'black',
     height: '2.5rem',
@@ -169,38 +176,43 @@ const ReactTableModern = ({
     )
   }
 
-  const tableWrapperStyle: CSS.Properties = {
-    backgroundColor: '#f9f9f9'
+  const tableWrapperStyle: React.CSSProperties = {
+    backgroundColor: '#f9f9f9',
+    ...props.tableWrapperStyle
   }
 
-  const tableStyle: CSS.Properties = {
+  const tableStyle: React.CSSProperties = {
     borderCollapse: 'separate',
     borderSpacing: '0.25em 0.25em',
-    width: '100%'
+    width: '100%',
+    ...props.tableStyle
   }
 
-  const tableHeaderStyle: CSS.Properties = {
+  const tableHeaderStyle: React.CSSProperties = {
     backgroundColor: '#f0f0f1',
     color: '#9696a0',
-    fontWeight: 400
+    fontWeight: 400,
+    ...props.tableHeaderStyle
   }
 
-  const tableHeaderCellsStyle: CSS.Properties = {
+  const tableHeaderCellsStyle: React.CSSProperties = {
     backgroundColor: '#f0f0f1',
     paddingLeft: '1rem',
     paddingRight: '1rem',
     paddingTop: '0.5rem',
-    paddingBottom: '0.5rem'
+    paddingBottom: '0.5rem',
+    ...props.tableHeaderCellsStyle
   }
 
-  const tableCellsStyle: CSS.Properties = {
+  const tableCellsStyle: React.CSSProperties = {
     paddingLeft: '1rem',
     paddingRight: '1rem',
     paddingTop: '0.5rem',
     paddingBottom: '0.5rem',
     backgroundColor: '#fff',
     lineHeight: '2rem',
-    borderRadius: '0.375rem'
+    borderRadius: '0.375rem',
+    ...props.tableCellsStyle
   }
 
   return (
