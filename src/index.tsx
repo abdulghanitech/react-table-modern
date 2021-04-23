@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './styles.module.css'
+import CSS from 'csstype'
 import getCell from './utils'
 
 interface Props {
@@ -15,7 +15,6 @@ const ReactTableModern = ({
   paginationRequired = true,
   paginationItemsPerPage = 5
 }: Props) => {
-  
   const [startIndex, setStartIndex] = useState(0)
   const [endIndex, setEndIndex] = useState(5)
 
@@ -23,7 +22,6 @@ const ReactTableModern = ({
   const [itemsPerPage, setItemsPerPage] = useState(paginationItemsPerPage)
 
   const count = data.length || 0
-
 
   const getTotalPages = () => {
     return Math.ceil(count / itemsPerPage)
@@ -49,40 +47,58 @@ const ReactTableModern = ({
     ? data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
     : data
 
+  const PaginationWrapperStyle: CSS.Properties = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: '1rem',
+    marginTop: '4px'
+  }
+
+  const selectWrapperStyle: CSS.Properties = {
+    backgroundColor: 'white',
+    borderRadius: '9999px',
+    paddingLeft: '1rem',
+    paddingRight: '0.5rem',
+    paddingTop: '0.5rem',
+    paddingBottom: '0.5rem',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+    borderColor: 'rgba(156, 163, 175)',
+    outline: '2px solid transparent',
+    outlineOffset: '2px'
+  }
+
+  const selectStyle: CSS.Properties = {
+    appearance: 'none',
+    outline: '2px solid transparent',
+    outlineOffset: '2px'
+  }
+
+  const nextAndPrevBtnStyle: CSS.Properties = {
+    backgroundColor: '#F0F0F1',
+    borderRadius: '9999px',
+    padding: '0.5rem 1rem',
+    borderStyle: 'none',
+    color: 'black'
+  }
+
+  const paginationBtns: CSS.Properties = {
+    borderRadius: '9999px',
+    color: 'black',
+    height: '2.5rem',
+    width: '2.5rem',
+    margin: '0 0.25rem',
+    borderStyle: 'solid'
+  }
+
   const Pagination = () => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingBottom: '1rem',
-          marginTop: 4
-        }}
-      >
+      <div style={PaginationWrapperStyle}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div
-            className='select-wrapper'
-            style={{
-              backgroundColor: 'white',
-              borderRadius: 9999,
-              paddingLeft: '1rem',
-              paddingRight: '0.5rem',
-              paddingTop: '0.5rem',
-              paddingBottom: '0.5rem',
-              borderWidth: 2,
-              borderStyle: 'solid',
-              borderColor: 'rgba(156, 163, 175)',
-              outline: '2px solid transparent',
-              outlineOffset: 2
-            }}
-          >
+          <div style={selectWrapperStyle}>
             <select
-              style={{
-                appearance: 'none',
-                outline: '2px solid transparent',
-                outlineOffset: 2
-              }}
+              style={selectStyle}
               value={itemsPerPage}
               onChange={(e) => {
                 let itemsPerPage = Number(e.target.value)
@@ -102,12 +118,8 @@ const ReactTableModern = ({
           <div style={{ display: 'flex' }}>
             <button
               style={{
-                backgroundColor: '#F0F0F1',
-                cursor: startIndex >= 5 ? 'pointer' : 'not-allowed',
-                borderRadius: 9999,
-                padding: '0.5rem 1rem',
-                borderStyle: 'none',
-                color: 'black'
+                ...nextAndPrevBtnStyle,
+                cursor: startIndex >= 5 ? 'pointer' : 'not-allowed'
               }}
               disabled={!(startIndex >= 5)}
               onClick={() => {
@@ -125,13 +137,8 @@ const ReactTableModern = ({
               getPageNumbers().map((item: number) => (
                 <button
                   style={{
+                    ...paginationBtns,
                     backgroundColor: currentPage === item ? '#FFF' : '#F0F0F1',
-                    borderRadius: 9999,
-                    color: 'black',
-                    height: '2.5rem',
-                    width: '2.5rem',
-                    margin: '0 0.25rem',
-                    borderStyle: 'solid',
                     borderWidth: currentPage === item ? 2 : undefined,
                     borderColor:
                       currentPage === item ? 'rgba(156, 163, 175)' : undefined
@@ -143,12 +150,8 @@ const ReactTableModern = ({
               ))}
             <button
               style={{
-                backgroundColor: '#F0F0F1',
-                cursor: getTotalPages() > endIndex ? 'pointer' : 'not-allowed',
-                borderRadius: 9999,
-                padding: '0.5rem 1rem',
-                borderStyle: 'none',
-                color: 'black'
+                ...nextAndPrevBtnStyle,
+                cursor: getTotalPages() > endIndex ? 'pointer' : 'not-allowed'
               }}
               disabled={!(getTotalPages() > endIndex)}
               onClick={() => {
@@ -166,16 +169,48 @@ const ReactTableModern = ({
     )
   }
 
+  const tableWrapperStyle: CSS.Properties = {
+    backgroundColor: '#f9f9f9'
+  }
+
+  const tableStyle: CSS.Properties = {
+    borderCollapse: 'separate',
+    borderSpacing: '0.25em 0.25em',
+    width: '100%'
+  }
+
+  const tableHeaderStyle: CSS.Properties = {
+    backgroundColor: '#f0f0f1',
+    color: '#9696a0',
+    fontWeight: 400
+  }
+
+  const tableHeaderCellsStyle: CSS.Properties = {
+    backgroundColor: '#f0f0f1',
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
+    paddingTop: '0.5rem',
+    paddingBottom: '0.5rem'
+  }
+
+  const tableCellsStyle: CSS.Properties = {
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
+    paddingTop: '0.5rem',
+    paddingBottom: '0.5rem',
+    backgroundColor: '#fff',
+    lineHeight: '2rem',
+    borderRadius: '0.375rem'
+  }
+
   return (
-    <div style={{ backgroundColor: '#f9f9f9' }}>
-      <table className={styles.reactTableModern}>
-        <tr className={styles.reactTableModernHeader}>
+    <div style={tableWrapperStyle}>
+      <table style={tableStyle}>
+        <tr style={tableHeaderStyle}>
           {columns &&
             columns.length > 0 &&
             columns.map((column) => (
-              <td className={styles.reactTableModernHeaderCells}>
-                {column.text}
-              </td>
+              <td style={tableHeaderCellsStyle}>{column.text}</td>
             ))}
         </tr>
 
@@ -189,11 +224,7 @@ const ReactTableModern = ({
                       columns.map((column) => {
                         const { dataField } = column
                         const cell = getCell(item, dataField)
-                        return (
-                          <td className={styles.reactTableModernCells}>
-                            {cell}
-                          </td>
-                        )
+                        return <td style={tableCellsStyle}>{cell}</td>
                       })}
                   </tr>
                 )
