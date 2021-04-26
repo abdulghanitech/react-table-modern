@@ -1496,17 +1496,28 @@
     pretty-format "^25.1.0"
     wait-for-expect "^3.0.2"
 
-"@testing-library/jest-dom@link:../node_modules/@testing-library/jest-dom":
-  version "0.0.0"
-  uid ""
+"@testing-library/jest-dom@file:../node_modules/@testing-library/jest-dom":
+  version "4.2.4"
+  dependencies:
+    "@babel/runtime" "^7.5.1"
+    chalk "^2.4.1"
+    css "^2.2.3"
+    css.escape "^1.5.1"
+    jest-diff "^24.0.0"
+    jest-matcher-utils "^24.0.0"
+    lodash "^4.17.11"
+    pretty-format "^24.0.0"
+    redent "^3.0.0"
 
-"@testing-library/react@link:../node_modules/@testing-library/react":
-  version "0.0.0"
-  uid ""
+"@testing-library/react@file:../node_modules/@testing-library/react":
+  version "9.5.0"
+  dependencies:
+    "@babel/runtime" "^7.8.4"
+    "@testing-library/dom" "^6.15.0"
+    "@types/testing-library__react" "^9.1.2"
 
-"@testing-library/user-event@link:../node_modules/@testing-library/user-event":
-  version "0.0.0"
-  uid ""
+"@testing-library/user-event@file:../node_modules/@testing-library/user-event":
+  version "7.2.1"
 
 "@types/aria-query@^4.2.0":
   version "4.2.1"
@@ -1586,9 +1597,11 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@link:../node_modules/@types/jest":
-  version "0.0.0"
-  uid ""
+"@types/jest@file:../node_modules/@types/jest":
+  version "25.2.3"
+  dependencies:
+    jest-diff "^25.2.1"
+    pretty-format "^25.2.1"
 
 "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.5":
   version "7.0.7"
@@ -1605,9 +1618,8 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
-"@types/node@link:../node_modules/@types/node":
-  version "0.0.0"
-  uid ""
+"@types/node@file:../node_modules/@types/node":
+  version "12.20.10"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1631,9 +1643,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@link:../node_modules/@types/react-dom":
-  version "0.0.0"
-  uid ""
+"@types/react-dom@file:../node_modules/@types/react-dom":
+  version "16.9.12"
+  dependencies:
+    "@types/react" "^16"
 
 "@types/react@*":
   version "17.0.3"
@@ -1644,13 +1657,12 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^16":
-  version "0.0.0"
-  uid ""
-
-"@types/react@link:../node_modules/@types/react":
-  version "0.0.0"
-  uid ""
+"@types/react@^16", "@types/react@file:../node_modules/@types/react":
+  version "16.14.5"
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
 
 "@types/scheduler@*":
   version "0.16.1"
@@ -8732,9 +8744,13 @@ react-dev-utils@^10.2.1:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-"react-dom@link:../node_modules/react-dom":
-  version "0.0.0"
-  uid ""
+"react-dom@file:../node_modules/react-dom":
+  version "16.14.0"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
 
 react-error-overlay@^6.0.7:
   version "6.0.9"
@@ -8751,17 +8767,73 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-"react-scripts@link:../node_modules/react-scripts":
-  version "0.0.0"
-  uid ""
+"react-scripts@file:../node_modules/react-scripts":
+  version "3.4.4"
+  dependencies:
+    "@babel/core" "7.9.0"
+    "@svgr/webpack" "4.3.3"
+    "@typescript-eslint/eslint-plugin" "^2.10.0"
+    "@typescript-eslint/parser" "^2.10.0"
+    babel-eslint "10.1.0"
+    babel-jest "^24.9.0"
+    babel-loader "8.1.0"
+    babel-plugin-named-asset-import "^0.3.6"
+    babel-preset-react-app "^9.1.2"
+    camelcase "^5.3.1"
+    case-sensitive-paths-webpack-plugin "2.3.0"
+    css-loader "3.4.2"
+    dotenv "8.2.0"
+    dotenv-expand "5.1.0"
+    eslint "^6.6.0"
+    eslint-config-react-app "^5.2.1"
+    eslint-loader "3.0.3"
+    eslint-plugin-flowtype "4.6.0"
+    eslint-plugin-import "2.20.1"
+    eslint-plugin-jsx-a11y "6.2.3"
+    eslint-plugin-react "7.19.0"
+    eslint-plugin-react-hooks "^1.6.1"
+    file-loader "4.3.0"
+    fs-extra "^8.1.0"
+    html-webpack-plugin "4.0.0-beta.11"
+    identity-obj-proxy "3.0.0"
+    jest "24.9.0"
+    jest-environment-jsdom-fourteen "1.0.1"
+    jest-resolve "24.9.0"
+    jest-watch-typeahead "0.4.2"
+    mini-css-extract-plugin "0.9.0"
+    optimize-css-assets-webpack-plugin "5.0.3"
+    pnp-webpack-plugin "1.6.4"
+    postcss-flexbugs-fixes "4.1.0"
+    postcss-loader "3.0.0"
+    postcss-normalize "8.0.1"
+    postcss-preset-env "6.7.0"
+    postcss-safe-parser "4.0.1"
+    react-app-polyfill "^1.0.6"
+    react-dev-utils "^10.2.1"
+    resolve "1.15.0"
+    resolve-url-loader "3.1.2"
+    sass-loader "8.0.2"
+    semver "6.3.0"
+    style-loader "0.23.1"
+    terser-webpack-plugin "2.3.8"
+    ts-pnp "1.1.6"
+    url-loader "2.3.0"
+    webpack "4.42.0"
+    webpack-dev-server "3.11.0"
+    webpack-manifest-plugin "2.2.0"
+    workbox-webpack-plugin "4.3.1"
+  optionalDependencies:
+    fsevents "2.1.2"
 
-"react-table-modern@link:..":
-  version "0.0.0"
-  uid ""
+"react-table-modern@file:..":
+  version "1.1.0"
 
-"react@link:../node_modules/react":
-  version "0.0.0"
-  uid ""
+"react@file:../node_modules/react":
+  version "16.14.0"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -10220,9 +10292,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-"typescript@link:../node_modules/typescript":
-  version "0.0.0"
-  uid ""
+"typescript@file:../node_modules/typescript":
+  version "3.9.9"
 
 unbox-primitive@^1.0.0:
   version "1.0.1"

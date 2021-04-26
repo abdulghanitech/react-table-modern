@@ -85,7 +85,7 @@ const App = () => {
       <ReactTableModern
         data={data}
         columns={columns}
-        paginationItemsPerPage={3}
+        // paginationItemsPerPage={3}
         // tableWrapperStyle={{backgroundColor: "#FFF"}}
         // tableCellsStyle={{padding: 20}}
         // paginationRequired={false}
