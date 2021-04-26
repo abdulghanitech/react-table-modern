@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Dropdown from './components/Dropdown'
 // import CSS from 'csstype'
 import getCell from './utils'
 
@@ -59,10 +60,11 @@ const ReactTableModern = (props: Props) => {
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: '1rem',
-    marginTop: "4px"
+    marginTop: '4px'
   }
 
   const selectWrapperStyle: React.CSSProperties = {
+    position: "relative",
     backgroundColor: 'white',
     borderRadius: '9999px',
     paddingLeft: '1rem',
@@ -103,7 +105,14 @@ const ReactTableModern = (props: Props) => {
     return (
       <div style={PaginationWrapperStyle}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={selectWrapperStyle}>
+          <Dropdown
+            itemsPerPage={itemsPerPage}
+            setItemsPerPage={setItemsPerPage}
+            selectStyle={selectStyle}
+            selectWrapperStyle={selectWrapperStyle}
+            paginationItemsPerPage={paginationItemsPerPage}
+          />
+          {/* <div style={selectWrapperStyle}>
             <select
               style={selectStyle}
               value={itemsPerPage}
@@ -116,8 +125,8 @@ const ReactTableModern = (props: Props) => {
                 <option value={item}>{item + ' items'}</option>
               ))}
             </select>
-            <span className='text-md text-blue-600 bp3-icon bp3-icon-chevron-down' />
-          </div>
+           <ChevronDown />
+          </div> */}
           per page
         </div>
 
@@ -178,6 +187,8 @@ const ReactTableModern = (props: Props) => {
 
   const tableWrapperStyle: React.CSSProperties = {
     backgroundColor: '#f9f9f9',
+    borderRadius: '0.5rem',
+    padding: 6,
     ...props.tableWrapperStyle
   }
 
@@ -201,6 +212,7 @@ const ReactTableModern = (props: Props) => {
     paddingRight: '1rem',
     paddingTop: '0.5rem',
     paddingBottom: '0.5rem',
+    borderRadius: '0.375rem',
     ...props.tableHeaderCellsStyle
   }
 
