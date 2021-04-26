@@ -16,7 +16,6 @@ npm install --save react-table-modern
 import React, { Component } from 'react'
 
 import ReactTableModern from 'react-table-modern'
-import 'react-table-modern/dist/index.css'
 
 const data = [
   {
@@ -102,12 +101,22 @@ class Example extends Component {
 
 Props
 
-| Prop | Type | Default |
-| --- | --- | --- |
-| data | Array Of Objects | [] |
-| columns | Array Of Objects | [] |
-| paginationRequired| boolean | true |
-| paginationItemsPerPage | number | 5 |
+| Prop | Type | Default | Required |
+| --- | --- | --- | --- |
+| data | Array Of Objects | [] | true |
+| columns | Array Of Objects | [] | true |
+| paginationRequired| boolean | true | false |
+| paginationItemsPerPage | number | 5 | false |
+| tableWrapperStyle | React.CSSProperties | - | false |
+| tableStyle | React.CSSProperties | - | false |
+| tableHeaderStyle | React.CSSProperties | - | false |
+| tableHeaderCellsStyle | React.CSSProperties | - | false |
+| tableCellsStyle | React.CSSProperties | - | false |
+| nextAndPrevBtnStyle | React.CSSProperties | - | false |
+| PaginationWrapperStyle | React.CSSProperties | - | false |
+| paginationBtns | React.CSSProperties | - | false |
+
+---
 
 
 ## License
