@@ -22,7 +22,7 @@ const data = [
     name: 'Abdul Ghani',
     address: { city: 'Hyd', street: 'stret', country: 'India' },
     phone: '9191919191',
-    email: 'hello@abdulghani.tech',
+    email: 'hi@abdulghani.tech',
     website: 'abdulghani.tech'
   },
   {
